@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario completo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/vuetify@3.5.16/dist/vuetify.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="app">
+      <v-app>
+        <v-container>
+          <h1>Formulario de contacto</h1>
+
+          <v-form>
+            <v-text-field label="Nombre completo" required></v-text-field>
+
+            <v-text-field
+              label="Correo electrónico"
+              type="email"
+              required
+            ></v-text-field>
+
+            <v-text-field label="Teléfono" type="tel"></v-text-field>
+
+            <v-radio-group label="Sexo" required>
+              <v-radio label="Masculino" value="masculino"></v-radio>
+              <v-radio label="Femenino" value="femenino"></v-radio>
+            </v-radio-group>
+
+            <v-checkbox-group label="Intereses">
+              <v-checkbox label="Música" value="musica"></v-checkbox>
+              <v-checkbox label="Deporte" value="deporte"></v-checkbox>
+              <v-checkbox label="Tecnología" value="tecnologia"></v-checkbox>
+            </v-checkbox-group>
+
+            <v-text-area label="Mensaje" required rows="5"></v-text-area>
+
+            <v-btn type="submit" color="primary">Enviar formulario</v-btn>
+
+            <v-btn type="reset" color="secondary">Limpiar formulario</v-btn>
+          </v-form>
+        </v-container>
+      </v-app>
+    </div>
+   
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@3.5.16/dist/vuetify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@3.5.16/dist/vuetify.min.css"></script>
+
+  <script>
+    const { createApp } = Vue;
+    const { createVuetify } = Vuetify;
+
+    const vuetify = createVuetify();
+    const app = createApp();
+    app.use(vuetify).mount("#app");
+  </script>
+</html>
